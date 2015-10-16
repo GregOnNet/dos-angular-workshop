@@ -20,7 +20,11 @@
       <!-- Our Code goes here -->
       <section class="sample" ng-controller="workshopController as workshop">
         <!-- {{ }} Binding Expression -->
-        <p>{{ workshop.welcome }}</p>
+        <p>{{ ::workshop.welcome }}</p>
+
+        <div ng-cloak>{{ ::workshop.attendees }}</div>
+
+        <div ng-bind="::workshop.attendees"></div>
       </section>
 
     </div>

@@ -8,5 +8,8 @@
 
   function WorkshopController() {
     this.welcome='Willkommen in Leipzig!';
+    this.attendees= ['Marco', 'Anton', 'Shunfeng', 'Michael',
+                     'Michael', 'Patrick', 'Enrico', 'Kim',
+                     'Rocco', 'Alex', 'Salvatore', 'Stefan'];
   }
 }());
