@@ -20,9 +20,20 @@
       <!-- Our Code goes here -->
       <section class="sample" ng-controller="workshopController as workshop">
         <!-- {{ }} Binding Expression -->
-        <p>{{ ::workshop.welcome }}</p>
+        <h2>{{ ::workshop.welcome }}</h2>
 
-        <div ng-cloak>{{ ::workshop.attendees }}</div>
+        <input ng-model="attendeeQuery"
+               placeholder="Nach Namen filtern..."
+               type="text" class="form-control">
+
+        <table class="table table-striped">
+          <tr ng-repeat="attendee in workshop.attendees
+                         | filter:attendeeQuery
+                         | orderBy:attendee
+                         track by $index">
+            <td>{{ attendee }}</td>
+          </tr>
+        </table>
 
         <div ng-bind="::workshop.attendees"></div>
       </section>
