@@ -1,0 +1,50 @@
+<html ng-app="devopenspace">
+  <head>
+    <title>Learning AngularJS</title>
+    <link rel="icon" href="../../favicon.ico">
+    <link href="../../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../styles/samples.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Sample</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Our Code goes here -->
+      <section class="sample" ng-controller="workshopController as workshop">
+        <!-- {{ }} Binding Expression -->
+        <h2>{{ ::workshop.welcome }}</h2>
+
+        <input ng-model="attendeeQuery"
+               placeholder="Nach Namen filtern..."
+               type="text" class="form-control">
+
+        <table class="table table-striped">
+          <tr ng-repeat="attendee in workshop.attendees
+                         | filter:attendeeQuery
+                         | orderBy:attendee
+                         track by $index">
+            <td>{{ attendee }}</td>
+          </tr>
+        </table>
+
+        <div ng-bind="::workshop.attendees"></div>
+      </section>
+
+    </div>
+
+    <!-- AngularJS -->
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="./module.js"></script>
+    <script src="./controller.js"></script>
+    <script src="./workshop.attendies.js"></script>
+    <script src="./workshop.topics.js"></script>
+  </body>
+</html>

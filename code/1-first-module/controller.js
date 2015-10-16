@@ -6,7 +6,7 @@
    .module('devopenspace')
    .controller('workshopController', WorkshopController);
 
-  function WorkshopController($scope) {
+  function WorkshopController() {
     this.welcome='Willkommen in Leipzig!';
     this.attendees= ['Marco', 'Anton', 'Shunfeng', 'Michael',
                      'Michael', 'Patrick', 'Enrico', 'Kim',
